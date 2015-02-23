@@ -1,7 +1,5 @@
 Use Redis Cache as a Scale out Backplane for ASP.NET SignalR
-====================================
-
-=====================
+=========================================================
 This sample demonstrates how you can use Azure Redis Cache as a SignalR backplane.
 More details about backplane are http://www.asp.net/signalr/overview/performance/scaleout-with-redis
 This samples was used to demo this scenario

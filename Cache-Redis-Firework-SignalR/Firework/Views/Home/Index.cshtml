@@ -1,0 +1,538 @@
+﻿<!DOCTYPE HTML>
+<header>
+    <style>
+    body {
+        background-color: black;
+    }
+
+    #playGround {
+        width: 900px;
+        height: 450px;
+        background-color: black;
+    }
+
+    div.box {
+        width: 69px;
+        height: 69px;
+    }
+
+    div.t_1 {
+        background-image: url("Images/t_0.png");
+    }
+
+    div.t_2 {
+        background-image: url("Images/t_1.png");
+    }
+
+    div.r_0 {
+        background-image: url("Images/r_0.png");
+    }
+
+    div.r_1 {
+        background-image: url("Images/r_1.png");
+    }
+
+    div.r_2 {
+        background-image: url("Imagess/r_2.png");
+    }
+
+        div.c_0 {
+            background-image: url("Images/c_0.png");
+        }
+
+        div.c_1 {
+            background-image: url("Images/c_1.png");
+        }
+
+        div.c_2 {
+            background-image: url("Images/c_2.png");
+        }
+
+        div.c_3 {
+            background-image: url("Images/c_3.png");
+        }
+
+        div.c_4 {
+            background-image: url("Images/c_4.png");
+        }
+
+        div.c_5 {
+            background-image: url("Images/c_5.png");
+            ;
+        }
+
+        div.c_6 {
+            background-image: url("Images/c_6.png");
+        }
+
+        div.t_1_h {
+            background-image: url("Images/t_0_h.png");
+        }
+
+        div.t_2_h {
+            background-image: url("Images/t_1_h.png");
+        }
+
+        div.r_0_h {
+            background-image: url("Images/r_0_h.png");
+        }
+
+        div.r_1_h {
+            background-image: url("Images/r_1_h.png");
+        }
+
+        div.r_2_h {
+            background-image: url("Images/r_2_h.png");
+        }
+
+        div.c_0_h {
+            background-image: url("Images/c_0_h.png");
+        }
+
+        div.c_1_h {
+            background-image: url("Images/c_1_h.png");
+        }
+
+        div.c_2_h {
+            background-image: url("Images/c_2_h.png");
+        }
+
+        div.c_3_h {
+            background-image: url("Images/c_3_h.png");
+        }
+
+        div.c_4_h {
+            background-image: url("Images/c_4_h.png");
+        }
+
+        div.c_5_h {
+            background-image: url("Images/c_5_h.png");
+        }
+
+        div.c_6_h {
+            background-image: url("Images/c_6_h.png");
+        }
+
+    .part_title {
+        font-family: Calibri;
+        font-size: 18px;
+        color: gray;
+        font-weight: bold;
+        text-align: center;
+        text-wrap: none;
+    }
+
+    .light_title {
+        font-family: Calibri;
+        font-size: 18px;
+        color: lightgray;
+        font-weight: bold;
+        text-align: center;
+        text-wrap: none;
+    }
+</style>
+</header>
+<table style="margin-left: auto; margin-right: auto; margin-top: 100px">
+    <tr>
+        <td></td>
+        <td>
+            <table>
+                <tr>
+                    <td class="part_title">
+                        <table><tr><td class="light_title" nowrap>Active Firework:&nbsp;</td><td><div id="numFirework"></div></td></tr></table>
+                    </td>
+                    <td style="width:100%"></td>
+                    <td class="part_title">
+                        <table><tr><td class="light_title" nowrap>Status:&nbsp;</td><td><div id="connectionStatus"></div></td></tr></table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+    </tr>
+    <tr style="vertical-align: bottom">
+        <td>
+            <table>
+                <tr>
+                    <td class="part_title">Type</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="t_1" class="box t_1" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="t_2" class="box t_2" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <img src="~/nightcity.png" id="nightcity" style="display: none" />
+            <canvas id="playGround" style="border-color: darkgray; border-style: solid; border-width: 1px;"></canvas>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td class="part_title">Trail</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="r_0" class="box r_0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="r_1" class="box r_1" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="r_2" class="box r_2" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td>
+                        <div id="c_0" class="box c_0" data-value="255,0,0" />
+                    </td>
+                    <td>
+                        <div id="c_1" class="box c_1" data-value="0,255,0" />
+                    </td>
+                    <td>
+                        <div id="c_2" class="box c_2" data-value="0,0,255" />
+                    </td>
+                    <td>
+                        <div id="c_3" class="box c_3" data-value="255,255,0" />
+                    </td>
+                    <td>
+                        <div id="c_4" class="box c_4" data-value="0,255,255" />
+                    </td>
+                    <td>
+                        <div id="c_5" class="box c_5" data-value="255,255,255" />
+                    </td>
+                    <td>
+                        <div id="c_6" class="box c_6" data-value="multi" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<script src="~/Scripts/jquery-2.1.0.js"></script>
+<script src="~/Scripts/jquery.signalR-2.0.3.js"></script>
+<script src="~/Scripts/knockout-3.1.0.js"></script>
+<script src="~/signalr/hubs" ></script>
+<script type="text/javascript">
+    //You can load page with type and color parameters
+    var preType = @ViewBag.FireworkType;
+    var preColor = @ViewBag.FireworkColorIndex;
+    var preTrail = 1;
+    if (preType != undefined)
+        $('#t_' + preType).attr('class', 'box t_' + preType + '_h');
+    //fireworkType.selectedIndex = preType;
+    if (preColor != undefined)
+        $('#c_' + preColor).attr('class', 'box c_' + preColor + '_h');
+    $('#r_' + preTrail).attr('class', 'box r_' + preTrail + '_h');
+    //fireworkColor.selectedIndex = preColor;
+
+    //SparkTrail class defines a trailing point of a spark
+    function SparkTrail(x, y) {
+        this.X = x;
+        this.Y = y;
+    }
+
+    //Spark class represents one spark in a firework
+    function Spark(type, color, x, y, fade) {
+        this.Color = color;
+        this.Type = type; //not used. For future extensions such as different spark shapes.
+        this.X = x;
+        this.Y = y;
+        this.Fade = fade; //not used. For future extensions such as simulating spark burning out.
+        this.Trail = [];  //trail of the spark
+    }
+
+    //Firework class is the base class of all types of fireworks
+    function Firework(baseX, baseY, color, tail) {
+        this.BaseX = baseX;
+        this.BaseY = baseY;
+        this.Color = color;
+        this.MaxPhase = 0;
+        this.Phase = 0; 
+        this.Sparks = [];
+        this.TailType = tail;
+    }
+    Firework.prototype.UpdatePhase = function (phase) {
+        this.Phase = phase;
+        if (this.Sparks.length > 0) {
+            this.Sparks.map(function (spark) {
+                if (spark.Trail.length >= 5)
+                    spark.Trail.shift(); //maximum trail length is 5
+                spark.Trail.push(new SparkTrail(spark.X, spark.Y)); //automatically maintain trails
+            });
+        }
+        this.updateSparks();
+    }
+    Firework.prototype.updateSparks = function () { }; //virtual method to be overriden by subclasses
+
+    //FireworkPattern class holds pre-calculated points of expanding circles
+    function FireworkPattern() {
+        this.Points = [[]];
+    }
+
+    //FireworkPatternFactory class provides pre-calculated points for explosion and gravity
+    function FireworkPatternFactory() {
+        this.Classic = new FireworkPattern();
+        this.GravityOffsets = [];
+        var convert= Math.PI/ 180;
+        //expanding circle
+        for (var i = 0; i < 100; i++) {
+            var points = [];
+            for (var j = 0; j < 360; j += 5) {
+                var x = i * Math.cos(j * convert);
+                var y = i * Math.sin(j * convert);
+                points.push(new SparkTrail(x, y));
+            }
+            this.Classic.Points.push(points);
+        }
+        //gravity
+        for (var i = 0; i < 100; i++){
+            if ( i >=40)
+                this.GravityOffsets.push(0.049 * (i-40) * (i-40));
+            else
+                this.GravityOffsets.push(0);
+        }
+    }
+
+    //SimpleFirework class represents a simple firework with one ring of sparks
+    function SimpleFirework(baseX, baseY) {
+        this.step = 10;
+        Firework.apply(this, arguments);
+        for (var i = 0; i < 72 / this.step - 1 ; i++)
+        {
+            if (this.Color =="multi") //multi-color support
+                this.Sparks.push(new Spark(1, $('#c_' + Math.floor(Math.random()*6)).data('value'), 0, 255));
+            else
+                this.Sparks.push(new Spark(1, this.Color, 0, 255));
+        }
+        this.MaxPhase = 72;
+    }
+    SimpleFirework.prototype = new Firework();
+    SimpleFirework.prototype.constructor = SimpleFirework;
+    SimpleFirework.prototype.updateSparks = function () {
+        for (var i = 0; i < this.Sparks.length; i++) {
+            this.Sparks[i].X = factory.Classic.Points[this.Phase][i * this.step].X;
+            this.Sparks[i].Y = factory.Classic.Points[this.Phase][i * this.step].Y;
+        }
+    }
+
+    //ComplexFirework class represents a complex firework with 4 rings of sparks
+    function ComplexFirework(baseX, baseY) {
+        this.step = 6;
+        Firework.apply(this, arguments);
+        for (var j = 0; j <4; j++)
+        {
+            for (var i = 0; i < 72 / this.step ; i++)
+            {
+                if (this.Color =="multi") //multi-color support
+                    this.Sparks.push(new Spark(1, $('#c_' + Math.floor(Math.random()*6)).data('value'), 0, 255));
+                else 
+                    this.Sparks.push(new Spark(1, this.Color, 0, 255));
+            }
+        }
+        this.MaxPhase = 72;
+    }
+    ComplexFirework.prototype = new Firework();
+    ComplexFirework.prototype.constructor = ComplexFirework;
+    ComplexFirework.prototype.updateSparks = function () {
+        var seg = 72 / this.step;
+        for (var j = 0; j < 4; j++){
+            for (var i = 0; i < seg; i++) {
+                if (this.Phase + j * 10 < 100){
+                    this.Sparks[i + seg * j].X = factory.Classic.Points[this.Phase+j * 10][(i * this.step + (4-j) * 15) % 72].X;
+                    this.Sparks[i + seg * j].Y = factory.Classic.Points[this.Phase+j * 10][(i * this.step + (4-j) * 15) % 72].Y;
+                }
+            }
+        }
+    }
+
+    var canvas;   //HTML 5 canvas
+    var context;  //canvas drawing context
+    var factory;  //factory for pre-calculated points
+    var fireworks = []; //Array that holds currently active fireworks
+    var rect;     //canvas rectangle
+    var hub;      //SignalR hub client
+    var enableUI = true; //UI is enabled or not (whether user can click on canvas)
+    var socket;
+    var renderHandle; 
+
+    $(document).ready(function () {
+        canvas = document.getElementById("playGround");
+        canvas.width = 900; 
+        canvas.height = 450;
+        context = canvas.getContext("2d");
+        rect = canvas.getBoundingClientRect();
+        factory = new FireworkPatternFactory();
+
+        canvas.addEventListener('click', sendFirework, false);
+
+        $('.box').click(function(evt){
+            var id = $(this).attr('id').substr(0,1);
+            var index = $(this).attr('id').substr(2,1);
+            if (id == 't')
+            {
+                for (var i = 1; i <=2; i++){
+                    if (index == i){
+                        $('#t_' + i).attr('class','box t_' + i + '_h');
+                        preType = index;
+                    }
+                    else
+                        $('#t_' + i).attr('class','box t_' + i);
+                }
+            }
+            if (id == 'c')
+            {
+                for (var i = 0; i <=6 ;i++){
+                    if (index == i){
+                        $('#c_' + i).attr('class','box c_' + i + '_h');
+                        preColor = index;
+                    }
+                    else
+                        $('#c_' + i).attr('class','box c_' + i);
+                }
+            }
+            if (id == 'r')
+            {
+                for (var i =0; i <=2; i++){
+                    if (index == i){
+                        $('#r_' + i).attr('class','box r_' + i + '_h');
+                        preTrail = index;
+                    }
+                    else
+                        $('#r_' + i).attr('class','box r_' + i);
+                }
+            }
+        });
+        
+        $(window).resize(function(){
+            rect = canvas.getBoundingClientRect();
+        });
+
+        hub = $.connection.fireworkHub;
+        $.connection.hub.stateChanged(connectionStateChanged);
+        hub.client.addFirework = function (firework) {
+            //Server broadcasted the event. Respond by adding the firework to local state.
+            if (firework.Type == 1)
+                fireworks.push(new SimpleFirework(firework.X, firework.Y, firework.Color, firework.TailType));
+            else
+                fireworks.push(new ComplexFirework(firework.X, firework.Y, firework.Color, firework.TailType));
+        };
+  
+        $.connection.hub.start().done(function()
+        {
+            enableUI = true;
+            setTimeout(updateCanvas, 50); //Start rendering routine.
+        });
+    });
+    function sendFirework(evt)
+    {
+        //User clicks on canvas - request user to broadcast the event
+        if (!enableUI)
+            return;
+        var firework;
+        if (preType == 1)
+            firework = new SimpleFirework(evt.clientX - rect.left + document.documentElement.scrollLeft,
+                                             evt.clientY - rect.top + document.documentElement.scrollTop, $('#c_' + preColor).data('value'), preTrail);
+        else
+            firework = new ComplexFirework(evt.clientX - rect.left,
+                                          evt.clientY - rect.top, $('#c_' + preColor).data('value'));
+        
+        hub.server.add(preType, firework.BaseX, firework.BaseY, $('#c_' + preColor).data('value'), preTrail);
+    }
+    function connectionStateChanged(state) {
+        //Display SignalR connection status
+        var stateConversion = {0: 'connecting', 1: 'connected', 2: 'reconnecting', 4: 'disconnected'};
+        $('#connectionStatus').text(stateConversion[state.newState]);
+    }
+    function updateCanvas() {
+        //render routine
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(nightcity,0,0);
+        fireworks.map(function (firework) {
+            //remove burned-out sparks
+            if (firework.Phase >= firework.MaxPhase) {
+                var position = $.inArray(firework, fireworks);
+                if (~position)
+                    fireworks.splice(position, 1);
+            }
+        });
+        fireworks.map(function (firework) {
+            if (firework.Phase < firework.MaxPhase) {
+                if (firework.Phase <= 30)
+                    firework.UpdatePhase(firework.Phase + 8); //exploding
+                else
+                    firework.UpdatePhase(firework.Phase + 5); //drifting
+                
+                firework.Sparks.map(function (spark) {
+                    spark.Y = spark.Y + factory.GravityOffsets[firework.Phase];
+                    context.beginPath();
+                    context.arc(firework.BaseX + spark.X, firework.BaseY + spark.Y, 8, 0, 2 * Math.PI, false);
+                    context.fillStyle = "rgba(" + spark.Color + ",0.5)";
+                    context.fill();
+
+                    if (firework.TailType != 2)
+                    {
+                        for (var i = 0; i < spark.Trail.length; i++)
+                        {
+                            if (firework.TailType == 0)
+                            {
+                                context.beginPath();
+                                context.arc(firework.BaseX + spark.Trail[i].X, firework.BaseY + spark.Trail[i].Y, i*1.5, 0, 2 * Math.PI, false);
+                                context.fillStyle = "rgba(" + spark.Color + ",0.5)";
+                                context.fill();
+                            }
+                            else{
+                                if (firework.Phase > 40)
+                                {
+                                    if (i < spark.Trail.length-1){
+                                        context.beginPath();
+                                        context.moveTo(firework.BaseX + spark.Trail[i].X - i * 1.5, firework.BaseY + spark.Trail[i].Y);
+                                        context.lineTo(firework.BaseX + spark.Trail[i+1].X - (i+1) * 1.5, firework.BaseY + spark.Trail[i+1].Y);
+                                        context.lineTo(firework.BaseX + spark.Trail[i+1].X + (i+1) * 1.5, firework.BaseY + spark.Trail[i+1].Y);
+                                        context.lineTo(firework.BaseX + spark.Trail[i].X + i * 1.5, firework.BaseY + spark.Trail[i].Y);
+                                        context.closePath();
+                                        context.fill();
+                                    }
+                                    else
+                                    {
+                                        context.beginPath();
+                                        context.moveTo(firework.BaseX + spark.Trail[i].X - i * 1.5, firework.BaseY + spark.Trail[i].Y);
+                                        context.lineTo(firework.BaseX + spark.X - (i+1) * 1.5, firework.BaseY + spark.Y);
+                                        context.lineTo(firework.BaseX + spark.X + (i+1) * 1.5, firework.BaseY + spark.Y);
+                                        context.lineTo(firework.BaseX + spark.Trail[i].X + i * 1.5, firework.BaseY + spark.Trail[i].Y);
+                                        context.closePath();
+                                        context.fill();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    context.beginPath();
+                    context.arc(firework.BaseX + spark.X, firework.BaseY + spark.Y, 3, 0, 2 * Math.PI, false);
+                    context.fillStyle = "rgb(" + spark.Color + ")";
+                    context.fill();
+                });
+            }
+        });
+        $('#numFirework').text(fireworks.length);
+        setTimeout(updateCanvas, 50);
+    }
+</script>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerQuery", "CustomerQuery\CustomerQuery.csproj", "{8C7B7D33-009C-4D3C-8066-545709BF04F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheFill", "CacheFill\CacheFill.csproj", "{770BCD81-CA9B-4078-85EA-C71FF6382AEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C7B7D33-009C-4D3C-8066-545709BF04F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7B7D33-009C-4D3C-8066-545709BF04F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7B7D33-009C-4D3C-8066-545709BF04F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7B7D33-009C-4D3C-8066-545709BF04F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{770BCD81-CA9B-4078-85EA-C71FF6382AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770BCD81-CA9B-4078-85EA-C71FF6382AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770BCD81-CA9B-4078-85EA-C71FF6382AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770BCD81-CA9B-4078-85EA-C71FF6382AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

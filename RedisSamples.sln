@@ -7,6 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMonitoring", "CustomMonitoring\CustomMonitoring.csproj", "{AE1C7F76-3B8B-4183-AB92-9D4045001F38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionState_OutputCaching", "SessionState_OutputCaching\SessionState_OutputCaching.csproj", "{67C6D163-555B-4033-8D98-8708092AFC80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisAsSignalRBackplane", "RedisAsSignalRBackplane\RedisAsSignalRBackplane.csproj", "{89D215AF-E97A-4789-AD8D-642275CFBD58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeedCacheForCustomerQuerySample", "SeedCacheForCustomerQuerySample\SeedCacheForCustomerQuerySample.csproj", "{6CC975A5-B770-459F-B10E-2E06375B44FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCacheCustomerQuerySample", "RedisCacheCustomerQuerySample\RedisCacheCustomerQuerySample.csproj", "{4A04426C-81E8-42BA-A80A-9F6D5E191CB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageCacheUsingMAML", "ManageCacheUsingMAML\ManageCacheUsingMAML.csproj", "{8D12202E-EE12-45D8-883D-55865A6B0199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +31,26 @@ Global
 		{AE1C7F76-3B8B-4183-AB92-9D4045001F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1C7F76-3B8B-4183-AB92-9D4045001F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE1C7F76-3B8B-4183-AB92-9D4045001F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C6D163-555B-4033-8D98-8708092AFC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C6D163-555B-4033-8D98-8708092AFC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C6D163-555B-4033-8D98-8708092AFC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C6D163-555B-4033-8D98-8708092AFC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D215AF-E97A-4789-AD8D-642275CFBD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D215AF-E97A-4789-AD8D-642275CFBD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D215AF-E97A-4789-AD8D-642275CFBD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D215AF-E97A-4789-AD8D-642275CFBD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC975A5-B770-459F-B10E-2E06375B44FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC975A5-B770-459F-B10E-2E06375B44FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC975A5-B770-459F-B10E-2E06375B44FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC975A5-B770-459F-B10E-2E06375B44FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A04426C-81E8-42BA-A80A-9F6D5E191CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A04426C-81E8-42BA-A80A-9F6D5E191CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A04426C-81E8-42BA-A80A-9F6D5E191CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A04426C-81E8-42BA-A80A-9F6D5E191CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D12202E-EE12-45D8-883D-55865A6B0199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D12202E-EE12-45D8-883D-55865A6B0199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D12202E-EE12-45D8-883D-55865A6B0199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D12202E-EE12-45D8-883D-55865A6B0199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

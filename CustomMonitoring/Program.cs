@@ -15,17 +15,24 @@ namespace CustomMonitoring
 {
     class Program
     {
+        public static string subscriptionId = ""; //Get this from the Azure Portal
+        public static string resourceGroupName = "";//Get this from the Azure Portal
+        public static string cacheName = ""; // This is just the name (without redis.cache.windows.net)
+       
+        // Use the following link to learn how to setup this app to access Active Directory
+        // https://msdn.microsoft.com/en-us/library/azure/dn790557.aspx#bk_portal
+        public static string tenantId = "";
+        public static string clientId = "";
+        public static string redirectUri = "";
+
         static void Main(string[] args)
         {
             // Define the base URI for management operations
             Uri baseUri = new Uri("https://management.azure.com");
 
-            var subscriptionId = ""; //Get this from the Azure Portal
             string token = GetAuthorizationHeader();
-            var ResourceGroupName = "";//Get this from the Azure Portal
             var startTime = DateTime.Now;
             var endTime = startTime.ToUniversalTime().AddHours(1.0).ToLocalTime();
-            var cacheName = ""; //Get this from the Azure Portal. This is just the name (without redis.cache.windows.net)
             var redisConnection = "";
             
             ConnectionMultiplexer connection = ConnectionMultiplexer.Connect(redisConnection);
@@ -49,7 +56,7 @@ namespace CustomMonitoring
             // Get the events for an Azure Resource (e.g. Website) (as described by the Azure Resource Manager APIs here:http://msdn.microsoft.com/en-us/library/azure/dn790569.aspx)
             // A resource URI looks like the following string: 
             //"/subscriptions/########-####-####-####-############/resourceGroups/resourcegroupname1/providers/resourceprovider1/resourcename1"
-            string resourceUri = string.Format("subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Cache/redis/{2}", subscriptionId,ResourceGroupName, cacheName);
+            string resourceUri = string.Format("subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Cache/redis/{2}", subscriptionId,resourceGroupName, cacheName);
 
             //Define a FilterString
             string filterString = FilterString.Generate<ListEventsForResourceParameters>(eventData => (eventData.EventTimestamp >= startTime) && (eventData.EventTimestamp <= endTime) && (eventData.ResourceUri == resourceUri));
@@ -72,9 +79,6 @@ namespace CustomMonitoring
         }
         private static string GetAuthorizationHeader()
         {
-            var tenantId = "";
-            var clientId = "";
-            var redirectUri = "";
             AuthenticationResult result = null;
 
             var context = new AuthenticationContext(String.Format("https://login.windows.net/{0}", tenantId));

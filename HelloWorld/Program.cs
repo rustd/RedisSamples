@@ -11,7 +11,7 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("pranavraebc1.redis.cache.windows.net,ssl=true,password=8ZzVFNGCjQS/O89sOZkQ/oew1OEk2m/iFROkCfELbV8=");
+            ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("<cachename>.redis.cache.windows.net,ssl=true,password=password");
             IDatabase cachedb = connection.GetDatabase();
             for (int i = 0; i < 5; i++)
             {

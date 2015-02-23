@@ -1,17 +1,11 @@
 Demo how Redis Cache can improve performance by Caching data
-====================================
-
-=================================
+=====================================================================
 This sample shows how a Cache can make an app more performant since retreivals from Cache are much faster as compared to a persistent storage.
 
 ## Pre-req
-
 You should run the SeedCacheForCustomerQuerySample for seeding the Azure Storage and Caches. Use the same connectionstring that you used in the Seeding Sample
 
-
 ## How To Run This Sample
-
-
 You need the following information from Azure Portal
 .Use the same connectionstring that you used in the Seeding Sample
 - Create a Azure Storage Account.

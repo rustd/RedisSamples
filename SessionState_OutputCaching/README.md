@@ -1,7 +1,5 @@
 Use Azure Redis Cache to store ASP.NET SessionState and OutputCache
-====================================
-
-==========================
+==============================================================
 This sample demonstrates how you to use Azure Redis Cache to store ASP.NET Session and Output Cache. This app uses the SessionState and OutputCache providers for Redis.
 
 ## How To Run This Sample

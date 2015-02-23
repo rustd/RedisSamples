@@ -175,6 +175,7 @@
     <Content Include="Images\t_0_h.png" />
     <Content Include="Images\t_1.png" />
     <Content Include="Images\t_1_h.png" />
+    <Content Include="nightcity.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

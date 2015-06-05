@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SessionState_OutputCaching.Default" %>
+<%@ OutputCache Duration="100" VaryByParam="*" %>
 
 <!DOCTYPE html>
 

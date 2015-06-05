@@ -7,6 +7,22 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
+    public static class Helper
+    {
+        private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
+        {
+            return ConnectionMultiplexer.Connect("cachename.redis.cache.windows.net,ssl=true,abortConnect=false,password=password");
+        });
+
+        public static ConnectionMultiplexer Connection
+        {
+            get
+            {
+                return lazyConnection.Value;
+            }
+        }
+    }
+
     public class BlogPost
     {
         private HashSet<string> tags = new HashSet<string>();
@@ -24,23 +40,4 @@ namespace HelloWorld
         public int Score { get; set; }
         public ICollection<string> Tags { get { return this.tags; } }
     }
-
-    public static class Helper
-    {
-
-
-        private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
-        {
-            return ConnectionMultiplexer.Connect("pranavracachedemo1.redis.cache.windows.net,ssl=true,password=zvwaNabayb2bhOJ0tRxSRYWLZIfVAqzvknXs6u0ziYU=");
-        });
-
-        public static ConnectionMultiplexer Connection
-        {
-            get
-            {
-                return lazyConnection.Value;
-            }
-        }
-    }
-
 }

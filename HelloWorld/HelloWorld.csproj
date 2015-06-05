@@ -52,6 +52,7 @@
     <Compile Include="GeneralConcepts.cs" />
     <Compile Include="GettingStarted.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="KeySpaceNotifications.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedisLists.cs" />

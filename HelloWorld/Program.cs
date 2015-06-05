@@ -18,6 +18,7 @@ namespace HelloWorld
             //RedisLists.Run();
             //RedisSortedSets.Run();
             //ConnectionOptions.Run();
+            //KeySpaceNotifications.Run();
         }
     }
 }

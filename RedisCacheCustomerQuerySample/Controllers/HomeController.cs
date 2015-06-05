@@ -156,7 +156,7 @@ namespace CustomerQuery.Controllers
 
             var connection = ConnectionMultiplexer.Connect(new ConfigurationOptions
             {
-                EndPoints = { { redisUrl2, redisPort } },
+                EndPoints = { { redisUrl2, redisPortSSL } },
                 Password = redisPassword2,
                 Ssl=true
             });

@@ -40,7 +40,7 @@ namespace ManageCacheUsingMAML
             var redisProperties = new RedisProperties();
             redisProperties.Sku = new Sku(redisSKUName,redisSKUFamily,redisSKUCapacity);
             redisProperties.RedisVersion = redisVersion;
-            var redisParams = new RedisCreateOrUpdateParameters(redisCacheRegion, redisProperties);
+            var redisParams = new RedisCreateOrUpdateParameters(redisProperties, redisCacheRegion);
             client.Redis.CreateOrUpdate(resourceGroupName,cacheName, redisParams);
         }
         private static string GetAuthorizationHeader()

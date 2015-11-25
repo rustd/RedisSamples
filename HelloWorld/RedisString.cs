@@ -31,7 +31,7 @@ namespace HelloWorld
             // Key Expiration
             cache.StringSet("iexp1", 1, TimeSpan.FromSeconds(1));
             Thread.Sleep(TimeSpan.FromSeconds(2));
-            Console.WriteLine("Expired Key=" + cache.StringGet("iexp1"));
+            Console.WriteLine("Key has expired. Value =" + cache.StringGet("iexp1"));
             
         }
         public class Contact

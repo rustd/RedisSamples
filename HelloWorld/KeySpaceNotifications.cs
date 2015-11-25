@@ -21,14 +21,16 @@ namespace HelloWorld
             DemoSetup(cache);
 
             //Single SET/GET
-            cache.StringSet("i", 1);
-            Console.WriteLine("Current Value=" + cache.StringGet("i"));
+            // Add a key/ value to Redis using a different client
 
-            subscriber.Subscribe("__keyspace@0__:*", (channel, value) =>
+            while (true)
             {
-                Console.WriteLine("Notification raised="+value);
+                subscriber.Subscribe("__keyspace@0__:*", (channel, value) =>
+                {
+                    Console.WriteLine("Notification raised=" + value);
+                }
+                );
             }
-            );
         }
 
         private static void DemoSetup(IDatabase cache)

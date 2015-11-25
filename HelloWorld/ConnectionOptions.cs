@@ -1,6 +1,7 @@
 ﻿using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,8 +35,8 @@ namespace HelloWorld
         private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
         {
             ConfigurationOptions config = new ConfigurationOptions();
-            config.EndPoints.Add("cachename.redis.cache.windows.net");
-            config.Password = "password";
+            config.EndPoints.Add(ConfigurationManager.AppSettings["RedisCacheName"]);
+            config.Password = ConfigurationManager.AppSettings["RedisCachePassword"];
             config.Ssl = true;
             config.AbortOnConnectFail = false;
             config.ConnectRetry = 5;

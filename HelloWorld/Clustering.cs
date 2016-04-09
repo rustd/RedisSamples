@@ -57,9 +57,6 @@ namespace HelloWorld
 
         private static void DemoSetup(IDatabase cache)
         {
-            // Need to wait until the shard (nodes) in the cluster are discovered. This is an issue with the client: https://github.com/StackExchange/StackExchange.Redis/issues/300
-            Thread.Sleep(500);
-
             for (int i = 0; i < 20; i++)
             {
                 cache.KeyDelete(clusterKey + i.ToString());

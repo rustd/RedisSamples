@@ -11,14 +11,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            GettingStarted.Run();
+            //GettingStarted.Run();
             //RedisString.Run();
             //GeneralConcepts.Run();
             //RedisTags.Run();
             //RedisLists.Run();
             //RedisSortedSets.Run();
             //ConnectionOptions.Run();
-            //KeySpaceNotifications.Run();
+            KeySpaceNotifications.Run();
             //Clustering.Run();
         }
     }

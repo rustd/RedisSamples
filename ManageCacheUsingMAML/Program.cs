@@ -3,6 +3,7 @@ using Microsoft.Azure;
 using Microsoft.Azure.Management.Redis;
 using Microsoft.Azure.Management.Redis.Models;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.Rest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,32 +18,34 @@ namespace ManageCacheUsingMAML
         public static string subscriptionId = ""; //Get this from the Azure Portal
         public static string resourceGroupName = "";//Get this from the Azure Portal
         public static string cacheName = ""; // This is just the name (without redis.cache.windows.net)
-        public static string redisVersion = "2.8";
-        public static string redisSKUName = "Basic"; //Basic/ Standard
-        public static string redisSKUFamily = "C";
+        public static string redisSKUName = "Premium"; //Basic/ Standard/ Premium
+        public static string redisSKUFamily = "P";
         public static int redisSKUCapacity = 1; //Cache Size 0-6. More details http://azure.microsoft.com/en-us/pricing/details/cache/
-        public static string redisCacheRegion = "North Central US";
+        public static string redisCacheRegion = "West US";
 
         // Use the following link to learn how to setup this app to access Active Directory
         // https://msdn.microsoft.com/en-us/library/azure/dn790557.aspx#bk_portal
         public static string tenantId = "";
         public static string clientId = "";
         public static string redirectUri = "";
+        public static string clientSecrets = "";
 
         static void Main(string[] args)
         {
             //https://msdn.microsoft.com/en-us/library/azure/dn790557.aspx#bk_portal
             string token = GetAuthorizationHeader();
 
-            TokenCloudCredentials creds = new TokenCloudCredentials(subscriptionId,token);
-
+            TokenCredentials creds = new TokenCredentials(token);
             RedisManagementClient client = new RedisManagementClient(creds);
-            var redisProperties = new RedisProperties();
-            redisProperties.Sku = new Sku(redisSKUName,redisSKUFamily,redisSKUCapacity);
-            redisProperties.RedisVersion = redisVersion;
-            var redisParams = new RedisCreateOrUpdateParameters(redisProperties, redisCacheRegion);
+            client.SubscriptionId = subscriptionId;
+            var redisParams = new RedisCreateOrUpdateParameters()
+            {
+                Sku = new Sku(redisSKUName, redisSKUFamily, redisSKUCapacity),
+                Location = redisCacheRegion
+            };
             client.Redis.CreateOrUpdate(resourceGroupName,cacheName, redisParams);
         }
+
         private static string GetAuthorizationHeader()
         {
             AuthenticationResult result = null;
@@ -51,10 +54,10 @@ namespace ManageCacheUsingMAML
 
             var thread = new Thread(() =>
             {
-                result = context.AcquireToken(
-                  "https://management.core.windows.net/",
-                  clientId,
-                  new Uri(redirectUri));
+                var authParam = new PlatformParameters(PromptBehavior.Never, null);
+                result = context.AcquireTokenAsync(
+                    "https://management.core.windows.net/",
+                    new ClientCredential(clientId, clientSecrets)).Result;
             });
 
             thread.SetApartmentState(ApartmentState.STA);
